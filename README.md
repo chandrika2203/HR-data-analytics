@@ -15,13 +15,13 @@ It helps HR teams track:
 
 ## 🔹 Key Features
 
-✔ Total Employees Overview
-✔ Gender Distribution (Male vs Female)
-✔ Department-wise Promotion & Retrench Analysis
-✔ Employee Overtime Analysis
-✔ Job Satisfaction Levels
-✔ Attrition Rate Tracking
-✔ Employee-Level Detailed Insights
+#✔ Total Employees Overview
+#✔ Gender Distribution (Male vs Female)
+#✔ Department-wise Promotion & Retrench Analysis
+#✔ Employee Overtime Analysis
+#✔ Job Satisfaction Levels
+#✔ Attrition Rate Tracking
+#✔ Employee-Level Detailed Insights
 
 ---
 

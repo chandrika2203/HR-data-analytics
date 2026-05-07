@@ -1,83 +1,174 @@
-# 📊 HR Analytics Dashboard (Power BI)
+# HR Analytics Dashboard
 
-## 🔹 Project Overview
+## Project Overview
+The HR Analytics Dashboard is an interactive Power BI project designed to analyze employee data and provide insights into workforce performance, attrition, promotion eligibility, retrenchment analysis, job satisfaction, overtime trends, and departmental performance.
 
-This project is an interactive **HR Analytics Dashboard** built using Power BI to analyze employee data and generate insights for decision-making.
-
-It helps HR teams track:
-
-* Employee distribution
-* Attrition trends
-* Promotion eligibility
-* Performance analysis
+This dashboard helps HR teams and management make data-driven decisions by identifying employee trends, improving workforce planning, and monitoring key HR metrics.
 
 ---
 
-## 🔹 Key Features
+# Tools & Technologies Used
 
-* ✔ Total Employees Overview
-* ✔ Gender Distribution (Male vs Female)
-* ✔ Employee Overtime Analysis
-* ✔ Job Satisfaction Levels
-* ✔ Attrition Rate Tracking
-* ✔ Employee-Level Detailed Insights
-
----
-
-## 🔹 Dashboard Pages
-
-### 🏠 Home Page
-
-* Total Employees: **1470**
-* Gender split visualization
-* Performance rate (High: 85%, Low: 15%)
-* Job satisfaction analysis
-* Department insights
+- Power BI
+- Power Query
+- DAX (Data Analysis Expressions)
+- Excel
+- Data Visualization
+- Data Cleaning & Transformation
 
 ---
 
-### ⚙️ Action Page
+# KPIs Used in Dashboard
 
-* Employees due for **Promotion**
-* Employees marked for **Retrenchment**
-* Employees appearing in both categories
+## Employee KPIs
+- Total Employees
+- Male Employees
+- Female Employees
+- Gender Ratio
 
----
+## Attrition KPIs
+- Total Attrition Count
+- Attrition Rate %
+- Department-wise Attrition
+- Job Role-wise Attrition
 
-### 📋 Detail Page
+## Promotion KPIs
+- Employees Due for Promotion
+- Department-wise Promotion Analysis
+- Promotion Eligible Employees
 
-* Job Role-wise breakdown:
+## Retrenchment KPIs
+- Employees Due for Retrenchment
+- Employees in Both Promotion & Retrenchment Categories
 
-  * Total Employees
-  * Retrench Count
-  * Promotion Eligibility
-  * Attrition Rate
+## Performance KPIs
+- High Performance Rate
+- Low Performance Rate
+- Job Satisfaction Level
 
----
-
-## 🔹 Tools & Technologies
-
-* Power BI
-* Excel / CSV Dataset
-* DAX (Data Analysis Expressions)
-
----
-
-## 🔹 Key Insights
-
-* High attrition observed in certain job roles
-* Significant employees eligible for promotion
-* Some employees flagged in both promotion & retrenchment (requires HR review)
-* Overtime strongly correlates with attrition
+## Overtime KPIs
+- Employees Working Overtime
+- Overtime vs Attrition Analysis
 
 ---
 
-## 🔹 How to Use
+# Important DAX Measures
 
-1. Download the `.pbix` file
-2. Open in Power BI Desktop
-3. Explore interactive filters and visuals
+## Total Employees
+```DAX
+Total Employees = COUNT(Employee[EmployeeNumber])
+```
+
+## Male Employees
+```DAX
+Male Employees =
+CALCULATE([Total Employees], Employee[Gender] = "Male")
+```
+
+## Female Employees
+```DAX
+Female Employees =
+CALCULATE([Total Employees], Employee[Gender] = "Female")
+```
+
+## Attrition Count
+```DAX
+Attrition Count =
+CALCULATE([Total Employees], Employee[Attrition] = "Yes")
+```
+
+## Attrition Rate %
+```DAX
+Attrition Rate % =
+DIVIDE([Attrition Count], [Total Employees], 0)
+```
+
+## Due for Promotion
+```DAX
+Due for Promotion =
+CALCULATE(
+    [Total Employees],
+    Employee[Promotion Status] = "Due for Promotion"
+)
+```
+
+## Retrenchment Count
+```DAX
+Retrenchment Count =
+CALCULATE(
+    [Total Employees],
+    Employee[Retrenchment Status] = "Retrenchment"
+)
+```
+
+## High Performance %
+```DAX
+High Performance % =
+DIVIDE(
+    CALCULATE(
+        [Total Employees],
+        Employee[Performance Rating] = "High"
+    ),
+    [Total Employees],
+    0
+)
+```
 
 ---
 
-##
+# Dashboard Features
+
+## Home Dashboard
+- Overall workforce summary
+- Employee distribution analysis
+- Job satisfaction analysis
+- Overtime analysis
+- Department-wise promotion and retrenchment overview
+
+## Action Dashboard
+- Employees due for promotion
+- Employees due for retrenchment
+- Employees present in both promotion and retrenchment categories
+
+## Detail Dashboard
+- Gender-wise employee analysis
+- Marital status analysis
+- Monthly income comparison
+- Job role analysis
+- Attrition trends
+
+---
+
+# Key Insights
+
+- Research & Development department has the highest number of employees.
+- Employees working overtime show higher attrition rates.
+- Sales Executives have comparatively higher attrition.
+- Male employees represent 60% of the workforce.
+- High-performance employees account for 85% of employees.
+- Some employees appear in both promotion and retrenchment categories and require management review.
+
+---
+
+# Steps Performed
+
+1. Collected HR employee dataset
+2. Cleaned and transformed data using Power Query
+3. Created calculated columns and DAX measures
+4. Built KPIs and interactive visualizations
+5. Added slicers, filters, and page navigation
+6. Designed dashboard layout and reporting pages
+7. Performed employee and departmental analysis
+
+---
+
+# Business Impact
+
+This dashboard helps organizations to:
+- Monitor employee performance
+- Reduce attrition
+- Improve workforce planning
+- Identify promotion candidates
+- Support strategic HR decision-making
+
+---
